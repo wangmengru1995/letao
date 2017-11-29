@@ -1,16 +1,59 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
+    <link rel="stylesheet" href="./lib/bootstrap/css/bootstrap.css">
+    <link rel="stylesheet" href="./lib/bootstrap-validator/css/bootstrapValidator.css">
+    <link rel="stylesheet" href="./css/common.css">
 </head>
+
 <body>
     <div class="lt-aside">
-        <div class="brand"></div>
-        <div class="user"></div>
-        <div class="nav"></div>
+        <div class="brand">
+            <a href="javascript:;">黑马前端16期</a>
+        </div>
+        <div class="user">
+            <img src="./images/dog2.jpg" alt="">
+            <p>超级管理员</p>
+        </div>
+        <div class="nav">
+            <ul>
+                <li>
+                    <a href="user.html" class="now">
+                        <span class="glyphicon glyphicon-user"></span>
+                        用户管理
+                    </a>
+                </li>
+                <li>
+                    <a href="Javascript:;">
+                        <span class="glyphicon glyphicon-list"></span>
+                        分类管理
+                    </a>
+                    <div class="child" style="display: none;">
+                        <a href="first.html">一级目录</a>
+                        <a href="second.html">二级目录</a>
+                    </div>
+                </li>
+                <li>
+                    <a href="product.html">
+                        <span class="glyphicon glyphicon-tags"></span>
+                        商品管理
+                    </a>
+                </li>
+            </ul>
+        </div>
     </div>
+
+
+    <script src="./lib/jquery/jquery.js"></script>
+    <script src="./lib/bootstrap/js/bootstrap.js"></script>
+    <script src="./lib/bootstrap-validator/js/bootstrapValidator.js"></script>
+    <script src="./js/common.js"></script>
+    <script src="./js/index.js"></script>
 </body>
+
 </html>
