@@ -21,6 +21,10 @@ a:link,a:visited,a:hover,a:active {
 .login .panel {
     margin-top: 150px;
 }
+
+.body-bg {
+    background-color: #222d32;
+}
 /* 登录界面 end */
 
 /* 首页样式 */
@@ -28,7 +32,16 @@ a:link,a:visited,a:hover,a:active {
     width: 180px;
     height: 100%;
     background-color: #222d32;
+    position: fixed;
+    top: 0;
+    left: 0;
+    transition: all .5s;
 }
+
+.lt-aside.now {
+    left: -180px;
+}
+
 .lt-aside .brand a {
     display: block;
     height: 50px;
@@ -79,4 +92,30 @@ a:link,a:visited,a:hover,a:active {
 
 .lt-aside .nav .child a {
     padding-left: 50px;
+}
+
+/* 首页主体的头部 */
+.lt-main {
+    height: 100%;
+    width: 100%;
+    padding-left: 180px;
+    transition: all .5s;
+}
+
+.lt-main.now {
+    padding-left: 0;
+}
+
+.lt-main .topbar {
+    height: 50px;
+    width: 100%;
+    background-color: #3c8dbc;
+    padding: 0 20px;
+}
+
+.lt-main .topbar a {
+    color: #fff;
+    font-size: 16px;
+    height: 50px;
+    line-height: 50px;
 }
