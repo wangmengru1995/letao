@@ -75,4 +75,11 @@ $(function () {
         })
     })
 
+    //重置功能
+    $("button[type='reset']").on("click",function(){
+        //需要重置表单样式，需要获取插件对象，而且需要在表单初始化之后
+        $form.data("bootstrapValidator").resetForm();
+    })
+
+
 })
