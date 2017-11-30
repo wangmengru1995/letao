@@ -76,7 +76,7 @@ $(function () {
 
           //重置表单
           $form.data("bootstrapValidator").resetForm();
-          $("[name='categoryName']").val('');
+          $form[0].reset();//重置表单，表单有reset方法，但是是DOM的，所以需要转换为DOM对象
         }
       }
     })

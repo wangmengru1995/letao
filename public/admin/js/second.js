@@ -122,10 +122,11 @@ $(function () {
 
           //重置表单
           $("#form").data("bootstrapValidator").resetForm();
+          $("#form")[0].reset();//表单有reset方法，DOM的
           $(".imgWrap img").attr("src", "./images/none.png");
           $(".btn-txt").text("请选择一级分类");
           $("[type='hidden']").val('');
-          $("[name='brandName']").val('');
+          $("[name='hot']").val('1');
         }
       }
     })
