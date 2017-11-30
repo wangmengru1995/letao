@@ -17,17 +17,11 @@ $(function () {
     })
 
 
-
-
-
-});
     //侧边栏二级菜单显示和隐藏
     //因为考虑到以后可能会增加内容，所以不能写死
     $(".child").prev().click(function () {
         $(this).next().slideToggle();
-        $(this).toggleClass("now");
     })
-
 
     //点击隐藏侧边栏功能
     $('.icon-menu').click(function () {
@@ -51,9 +45,4 @@ $(function () {
         })
     })
 
-
-
-
-
-
-})
+});

@@ -119,3 +119,16 @@ a:link,a:visited,a:hover,a:active {
     height: 50px;
     line-height: 50px;
 }
+
+.lt-main .main-b {
+    padding: 0 20px;
+}
+
+.lt-main .breadcrumb {
+    margin-top: 20px;
+}
+
+.lt-main .content .chartLeft,.lt-main .content .chartRight {
+    width: 48%;
+    height: 500px;
+}
