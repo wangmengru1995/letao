@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>首页</title>
+    <title>分类目录-二级目录</title>
     <title>Document</title>
     <link rel="stylesheet" href="./lib/bootstrap/css/bootstrap.css">
     <link rel="stylesheet" href="./lib/bootstrap-validator/css/bootstrapValidator.css">
@@ -60,18 +60,107 @@
         </div>
         <div class="container-fliud main-b">
             <ol class="breadcrumb">
-                <li><a href="#">管理系统</a></li>
-                <li>首页</li>
+                <li><a href="index.html">管理系统</a></li>
+                <li>分类管理</li>
+                <li class="active">二级目录</li>
             </ol>
             <div class="content">
-                <div class="chartLeft pull-left">11</div>
-                <div class="chartRight pull-right">22</div>
+                <!-- 添加分类按钮 -->
+                <button class="btn btn-default mb-20 btn-add">添加分类</button>
+                <table class="table table-bordered text-center">
+                    <thead>
+                        <tr>
+                            <th width="10%" class="text-center">序号</th>
+                            <th width="30%" class="text-center">一级分类名称</th>
+                            <th width="30%" class="text-center">二级分类名称</th>
+                            <th width="30%" class="text-center">二级分类LOGO</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- 模板引擎的坑 -->
+                    </tbody>
+                </table>
+                <!-- 分页 -->
+                <div class="page text-right">
+                    <ul id="firstPaginator"></ul>
+                </div>
             </div>
         </div>
     </div>
 
+    <!-- 模板引擎 -->
+    <script type="text/html" id="secondTpl">
+        {{each rows v i}}
+        <tr>
+            <td>{{(page-1)*size + i + 1}}</td>
+            <td>{{ v.categoryName }}</td>
+            <td>{{ v.brandName }}</td>
+            <td>
+                <img src="{{ v.brandLogo ? v.brandLogo :'./images/none.png'}}" width="50" height="40" alt="">
+            </td>
+        </tr>
+        {{/each}}
+    </script>
 
-    <!-- 模态框 start -->
+    <!-- 添加分类的模板引擎 -->
+    <script type="text/html" id="addTpl">
+        {{each rows v i}}
+        <li><a href="#" data-id="{{ v.id }}">{{ v.categoryName }}</a></li>
+        {{/each}}
+    </script>
+
+
+    <!-- 添加分类的模态框 -->
+    <div class="modal fade" id="secondModal" tabindex="-1">
+        <div class="modal-dialog modal-sm">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal"><span>&times;</span></button>
+                    <h4 class="modal-title" id="gridSystemModalLabel">添加分类</h4>
+                </div>
+                <form id="form">
+                    <div class="modal-body">
+                        <div class="container-fluid">
+                            <div class="form-group">
+                                <div class="dropdown">
+                                    <input type="hidden" name="categoryId">
+                                    <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown">
+                                              <span class="btn-txt">请选择一级分类</span>
+                                              <span class="caret"></span>
+                                    </button>
+                                    <ul class="dropdown-menu">
+                                        <!-- 再挖一个坑 -->
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <input type="text" class="form-control" autocomplete="off" name="brandName" placeholder="请输入二级分类名称">
+                            </div>
+                            <div class="form-group">
+                                <div class="Wrap">
+                                    <input id="fileupload" type="file" name="pic1" data-url="/category/addSecondCategoryPic">
+                                    <button class="btn btn-default btn-upload">上传图片</button>
+                                </div>
+                            </div>
+                            <div class="form-group imgWrap">
+                                <img src="./images/none.png" width="100" width="100" alt="">
+                                <input type="hidden" name="brandLogo">
+                                <input type="hidden" name="hot" value="1">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+                        <button type="submit" class="btn btn-primary btn-submit">添加</button>
+                    </div>
+                </form>
+            </div>
+            <!-- /.modal-content -->
+        </div>
+        <!-- /.modal-dialog -->
+    </div>
+
+    <!-- 退出模态框 start -->
     <div class="modal fade" id="logoutModal" aria-labelledby="gridSystemModalLabel">
         <div class="modal-dialog modal-sm">
             <div class="modal-content">
@@ -96,14 +185,18 @@
         </div>
         <!-- /.modal-dialog -->
     </div>
-    <!-- 模态框 end -->
+    <!-- 退出模态框 end -->
+
     <script src="./lib/jquery/jquery.js"></script>
+    <script src="./lib/jquery-fileupload/jquery.ui.widget.js"></script>
+    <script src="./lib/jquery-fileupload/jquery.fileupload.js"></script>
     <script src="./lib/bootstrap/js/bootstrap.js"></script>
     <script src="./lib/bootstrap-validator/js/bootstrapValidator.js"></script>
+    <script src="./lib/bootstrap-paginator/bootstrap-paginator.js"></script>
     <script src="./lib/nprogress/nprogress.js"></script>
-    <script src="./lib/echarts/echarts.min.js"></script>
+    <script src="./lib/artTemplate/template-web.js"></script>
     <script src="./js/common.js"></script>
-    <script src="./js/index.js"></script>
+    <script src="./js/second.js"></script>
 </body>
 
 </html>

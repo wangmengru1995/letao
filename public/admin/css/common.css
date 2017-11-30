@@ -139,3 +139,19 @@ a:link,a:visited,a:hover,a:active {
     width: 48%;
     height: 500px;
 }
+
+/* 二级分类 */
+form .Wrap {
+    width: 82px;
+    height: 34px;
+    position: relative;
+}
+
+form .Wrap input[type='file'] {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    opacity: 0;
+}
