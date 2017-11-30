@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>首页</title>
+    <title>用户管理</title>
     <title>Document</title>
     <link rel="stylesheet" href="./lib/bootstrap/css/bootstrap.css">
     <link rel="stylesheet" href="./lib/bootstrap-validator/css/bootstrapValidator.css">
@@ -31,7 +31,7 @@
                     </a>
                 </li>
                 <li>
-                    <a href="Javascript:;" style="color:#fff">
+                    <a href="Javascript:;" style="color: #fff">
                         <span class="glyphicon glyphicon-list"></span>
                         分类管理
                     </a>
@@ -60,16 +60,64 @@
         </div>
         <div class="container-fliud main-b">
             <ol class="breadcrumb">
-                <li><a href="#">管理系统</a></li>
-                <li>首页</li>
+                <li><a href="index.html">管理系统</a></li>
+                <li>分类管理</li>
+                <li class="active">一级目录</li>
             </ol>
             <div class="content">
-                <div class="chartLeft pull-left">11</div>
-                <div class="chartRight pull-right">22</div>
+                <table class="table table-bordered text-center">
+                    <thead>
+                        <tr>
+                            <th width="20%" class="text-center">序号</th>
+                            <th width="80%" class="text-center">分类名称</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- 模板引擎的坑 -->
+                    </tbody>
+                </table>
+
+                <div class="page text-right">
+                    <ul id="userPaginator"></ul>
+                </div>
             </div>
         </div>
     </div>
 
+    <!-- 模板引擎 -->
+    <script type="text/html" id="userTpl">
+        <tr>
+            <td>1</td>
+            <td>运动鞋</td>
+        </tr>
+    </script>
+
+
+    <!-- 用户操作的模态框 -->
+    <div class="modal fade" id="userModal" aria-labelledby="gridSystemModalLabel">
+        <div class="modal-dialog modal-sm">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal"><span>&times;</span></button>
+                    <h4 class="modal-title" id="gridSystemModalLabel">温馨提示</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="container-fluid">
+                        <div class="row text-danger">
+                            <span class="glyphicon glyphicon-info-sign"></span>
+                            <span>你确定要执行此操作吗？</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+                    <button type="button" class="btn btn-primary btn-confirm">确定</button>
+                </div>
+            </div>
+            <!-- /.modal-content -->
+        </div>
+        <!-- /.modal-dialog -->
+    </div>
 
     <!-- 模态框 start -->
     <div class="modal fade" id="logoutModal" aria-labelledby="gridSystemModalLabel">
@@ -100,10 +148,11 @@
     <script src="./lib/jquery/jquery.js"></script>
     <script src="./lib/bootstrap/js/bootstrap.js"></script>
     <script src="./lib/bootstrap-validator/js/bootstrapValidator.js"></script>
+    <script src="./lib/bootstrap-paginator/bootstrap-paginator.js"></script>
     <script src="./lib/nprogress/nprogress.js"></script>
-    <script src="./lib/echarts/echarts.min.js"></script>
+    <script src="./lib/artTemplate/template-web.js"></script>
     <script src="./js/common.js"></script>
-    <script src="./js/index.js"></script>
+    <script src="./js/first.js"></script>
 </body>
 
 </html>

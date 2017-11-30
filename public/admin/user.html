@@ -78,26 +78,57 @@
                         <!-- 模板引擎的坑 -->
                     </tbody>
                 </table>
+
+                <div class="page text-right">
+                    <ul id="userPaginator"></ul>
+                </div>
             </div>
         </div>
     </div>
 
     <!-- 模板引擎 -->
     <script type="text/html" id="userTpl">
-        {{each }}
+        {{each rows v i}}
         <tr>
-            <td>1</td>
-            <td>root</td>
-            <td>1111111111</td>
-            <td>启用</td>
-            <td>
-                <button class="btn btn-success btn-sm">启用</button>
-                <button class="btn btn-danger btn-sm">禁用</button>
+            <td>{{ (page - 1)*size + i+1}}</td>
+            <td>{{ v.username }}</td>
+            <td>{{ v.mobile }}</td>
+            <td>{{ v.isDelete === 0 ? "禁用" : "正常" }}</td>
+            <td data-id="{{ v.id }}">
+                {{if v.isDelete === 0}}
+                <button class="btn btn-success btn-sm">启用</button> {{ else if v.isDelete === 1}}
+                <button class="btn btn-danger btn-sm">禁用</button> {{/if }}
             </td>
         </tr>
         {{/each }}
     </script>
 
+
+    <!-- 用户操作的模态框 -->
+    <div class="modal fade" id="userModal" aria-labelledby="gridSystemModalLabel">
+        <div class="modal-dialog modal-sm">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal"><span>&times;</span></button>
+                    <h4 class="modal-title" id="gridSystemModalLabel">温馨提示</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="container-fluid">
+                        <div class="row text-danger">
+                            <span class="glyphicon glyphicon-info-sign"></span>
+                            <span>你确定要执行此操作吗？</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+                    <button type="button" class="btn btn-primary btn-confirm">确定</button>
+                </div>
+            </div>
+            <!-- /.modal-content -->
+        </div>
+        <!-- /.modal-dialog -->
+    </div>
 
     <!-- 模态框 start -->
     <div class="modal fade" id="logoutModal" aria-labelledby="gridSystemModalLabel">
@@ -128,6 +159,7 @@
     <script src="./lib/jquery/jquery.js"></script>
     <script src="./lib/bootstrap/js/bootstrap.js"></script>
     <script src="./lib/bootstrap-validator/js/bootstrapValidator.js"></script>
+    <script src="./lib/bootstrap-paginator/bootstrap-paginator.js"></script>
     <script src="./lib/nprogress/nprogress.js"></script>
     <script src="./lib/artTemplate/template-web.js"></script>
     <script src="./js/common.js"></script>
