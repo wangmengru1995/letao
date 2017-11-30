@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>用户管理</title>
+    <title>分类目录-一级目录</title>
     <title>Document</title>
     <link rel="stylesheet" href="./lib/bootstrap/css/bootstrap.css">
     <link rel="stylesheet" href="./lib/bootstrap-validator/css/bootstrapValidator.css">
@@ -65,6 +65,8 @@
                 <li class="active">一级目录</li>
             </ol>
             <div class="content">
+                <!-- 添加分类按钮 -->
+                <button class="btn btn-default mb-20 btn-add">添加分类</button>
                 <table class="table table-bordered text-center">
                     <thead>
                         <tr>
@@ -76,50 +78,53 @@
                         <!-- 模板引擎的坑 -->
                     </tbody>
                 </table>
-
+                <!-- 分页 -->
                 <div class="page text-right">
-                    <ul id="userPaginator"></ul>
+                    <ul id="firstPaginator"></ul>
                 </div>
             </div>
         </div>
     </div>
 
     <!-- 模板引擎 -->
-    <script type="text/html" id="userTpl">
+    <script type="text/html" id="firstTpl">
+        {{each rows v i}}
         <tr>
-            <td>1</td>
-            <td>运动鞋</td>
+            <td>{{ (page-1)*size + i+1 }}</td>
+            <td>{{ v.categoryName }}</td>
         </tr>
+        {{/each}}
     </script>
 
 
-    <!-- 用户操作的模态框 -->
-    <div class="modal fade" id="userModal" aria-labelledby="gridSystemModalLabel">
+    <!-- 添加分类的模态框 -->
+    <div class="modal fade" id="firstModal" tabindex="-1">
         <div class="modal-dialog modal-sm">
             <div class="modal-content">
                 <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal"><span>&times;</span></button>
-                    <h4 class="modal-title" id="gridSystemModalLabel">温馨提示</h4>
+                    <h4 class="modal-title" id="gridSystemModalLabel">添加分类</h4>
                 </div>
-                <div class="modal-body">
-                    <div class="container-fluid">
-                        <div class="row text-danger">
-                            <span class="glyphicon glyphicon-info-sign"></span>
-                            <span>你确定要执行此操作吗？</span>
+                <form id="form">
+                    <div class="modal-body">
+                        <div class="container-fluid">
+                            <div class="form-group">
+                                <input type="text" class="form-control" autocomplete="off" name="categoryName" placeholder="请输入一级分类名称">
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
-                    <button type="button" class="btn btn-primary btn-confirm">确定</button>
-                </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+                        <button type="submit" class="btn btn-primary btn-confirm">添加</button>
+                    </div>
+                </form>
             </div>
             <!-- /.modal-content -->
         </div>
         <!-- /.modal-dialog -->
     </div>
 
-    <!-- 模态框 start -->
+    <!-- 退出模态框 start -->
     <div class="modal fade" id="logoutModal" aria-labelledby="gridSystemModalLabel">
         <div class="modal-dialog modal-sm">
             <div class="modal-content">
@@ -144,7 +149,8 @@
         </div>
         <!-- /.modal-dialog -->
     </div>
-    <!-- 模态框 end -->
+    <!-- 退出模态框 end -->
+
     <script src="./lib/jquery/jquery.js"></script>
     <script src="./lib/bootstrap/js/bootstrap.js"></script>
     <script src="./lib/bootstrap-validator/js/bootstrapValidator.js"></script>

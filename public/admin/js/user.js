@@ -50,7 +50,8 @@ $(function () {
         //分页功能
         $("#userPaginator").bootstrapPaginator({
           bootstrapMajorVersion: 3,
-          numberOfPages: 5,
+          numberOfPages: pageSize,
+          // currentPage: currentPage,
           totalPages: Math.ceil(data.total / data.size),
           //onPageClicked 有四个参数，要按顺序写参数
           onPageClicked: function (a, b, c, page) {

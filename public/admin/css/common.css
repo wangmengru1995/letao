@@ -20,6 +20,10 @@ a:link,a:visited,a:hover,a:active {
 .table.table-bordered td {
     vertical-align: middle;
 }
+
+.mb-20 {
+    margin-bottom: 20px;
+}
 /* 登录界面 start */
 .login .panel {
     margin-top: 150px;
