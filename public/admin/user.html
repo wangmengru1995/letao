@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>首页</title>
+    <title>用户管理</title>
     <title>Document</title>
     <link rel="stylesheet" href="./lib/bootstrap/css/bootstrap.css">
     <link rel="stylesheet" href="./lib/bootstrap-validator/css/bootstrapValidator.css">
@@ -60,15 +60,43 @@
         </div>
         <div class="container-fliud main-b">
             <ol class="breadcrumb">
-                <li><a href="#">管理系统</a></li>
-                <li>首页</li>
+                <li><a href="index.html">管理系统</a></li>
+                <li class="active">用户管理</li>
             </ol>
             <div class="content">
-                <div class="chartLeft pull-left">11</div>
-                <div class="chartRight pull-right">22</div>
+                <table class="table table-bordered text-center">
+                    <thead>
+                        <tr>
+                            <th width="10%" class="text-center">序号</th>
+                            <th width="30%" class="text-center">用户名</th>
+                            <th width="30%" class="text-center">手机号</th>
+                            <th width="20%" class="text-center">状态</th>
+                            <th width="10%" class="text-center">操作</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- 模板引擎的坑 -->
+                    </tbody>
+                </table>
             </div>
         </div>
     </div>
+
+    <!-- 模板引擎 -->
+    <script type="text/html" id="userTpl">
+        {{each }}
+        <tr>
+            <td>1</td>
+            <td>root</td>
+            <td>1111111111</td>
+            <td>启用</td>
+            <td>
+                <button class="btn btn-success btn-sm">启用</button>
+                <button class="btn btn-danger btn-sm">禁用</button>
+            </td>
+        </tr>
+        {{/each }}
+    </script>
 
 
     <!-- 模态框 start -->
@@ -101,9 +129,9 @@
     <script src="./lib/bootstrap/js/bootstrap.js"></script>
     <script src="./lib/bootstrap-validator/js/bootstrapValidator.js"></script>
     <script src="./lib/nprogress/nprogress.js"></script>
-    <script src="./lib/echarts/echarts.min.js"></script>
+    <script src="./lib/artTemplate/template-web.js"></script>
     <script src="./js/common.js"></script>
-    <script src="./js/index.js"></script>
+    <script src="./js/user.js"></script>
 </body>
 
 </html>

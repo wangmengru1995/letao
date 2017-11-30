@@ -17,6 +17,9 @@ a:link,a:visited,a:hover,a:active {
     text-decoration: none;
 }
 
+.table.table-bordered td {
+    vertical-align: middle;
+}
 /* 登录界面 start */
 .login .panel {
     margin-top: 150px;

@@ -5,6 +5,18 @@ $(function () {
         showSpinner: false
     });
 
+    //非登录页面，判断用户是否登录，没有登录就跳转到login.html
+    //app.js中只是判断是否是admin文件夹下面的，加了这个无论是哪个文件夹都可以进行用户验证
+    // console.log(location.href);
+    if(location.href.indexOf("login.html") == -1){
+        $.get("/employee/checkRootLogin",function(data){
+            if(data.error === 400){
+                //未登录
+                location.href = "login.html";
+            }
+        })
+    }
+
     //精度条
     //开始发送ajax的时候显示进度条
     $(window).ajaxStart(function () {
