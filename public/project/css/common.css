@@ -126,3 +126,12 @@ html,body {
 .lt-header a span {
   line-height: 50px;
 }
+
+.lt-content {
+  padding: 0 20px;
+}
+
+.lt-content .left,.lt-content .right {
+  width: 48%;
+  height: 400px;
+}
