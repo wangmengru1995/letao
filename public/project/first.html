@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>首页</title>
+  <title>分类管理-一级分类</title>
   <link rel="stylesheet" href="./lib/bootstrap/css/bootstrap.css">
   <link rel="stylesheet" href="./lib/bootstrap-validator/css/bootstrapValidator.css">
   <link rel="stylesheet" href="./lib/nprogress/nprogress.css">
@@ -23,17 +23,17 @@
     </div>
     <div class="nav">
       <ul>
-        <li><a href="user.html" class="now">
+        <li><a href="user.html">
             <span class="glyphicon glyphicon-user"></span>
             用户管理
           </a></li>
         <li>
-          <a href="#">
+          <a href="#" style="color: #fff;">
           <span class="glyphicon glyphicon-list"></span>
           分类管理
           </a>
-          <div class="child" style="display: none;">
-            <div class="first"><a href="first.html">一级分类</a></div>
+          <div class="child" style="display: block;">
+            <div class="first"><a href="first.html" class="now">一级分类</a></div>
             <div class="second"><a href="second.html">二级分类</a></div>
           </div>
         </li>
@@ -53,17 +53,16 @@
       <div class="nav">
         <ol class="breadcrumb">
           <li><a href="index.html">管理系统</a></li>
-          <li class="active">用户管理</li>
+          <li><a href="javascript:;">分类系统</a></li>
+          <li class="active">一级分类</li>
         </ol>
       </div>
+      <button class="btn btn-default btn_add">添加分类</button>
       <table class="table table-bordered text-center">
         <thead>
           <tr>
-            <th width="10%" class="text-center">序号</th>
-            <th width="30%" class="text-center">用户名</th>
-            <th width="30%" class="text-center">手机号</th>
-            <th width="20%" class="text-center">状态</th>
-            <th width="10%" class="text-center">操作</th>
+            <th width="20%" class="text-center">序号</th>
+            <th width="80%" class="text-center">分类名称</th>
           </tr>
         </thead>
         <tbody>
@@ -78,27 +77,29 @@
 
 
 
-  <!-- 用户模态框 -->
-  <div class="modal fade" id="userModal">
+  <!-- 一级分类添加模态框 -->
+  <div class="modal fade" id="firstModal">
     <div class="modal-dialog modal-sm">
       <div class="modal-content">
         <div class="modal-header">
           <button type="button" class="close" data-dismiss="modal"><span>&times;</span></button>
-          <h4 class="modal-title" id="gridSystemModalLabel">温馨提示</h4>
+          <h4 class="modal-title" id="gridSystemModalLabel">添加分类</h4>
         </div>
-        <div class="modal-body">
-          <div class="container-fluid">
-            <div class="row text-danger">
-              <p>
-                <span class="glyphicon glyphicon-info-sign"></span> 你确定要执行此操作吗？
-              </p>
+        <form>
+          <div class="modal-body">
+            <div class="container-fluid">
+              <div class="row text-danger">
+                <div class="form-group">
+                  <input type="text" class="form-control" name="categoryName" id="exampleInputPassword1" placeholder="请输入一级分类名称">
+                </div>
+              </div>
             </div>
           </div>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
-          <button type="button" class="btn btn-primary btn_confirm">确定</button>
-        </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+            <button type="submit" class="btn btn-primary btn_confirm">添加</button>
+          </div>
+        </form>
       </div>
     </div>
   </div>
@@ -129,19 +130,12 @@
   </div>
 
 
-  <!-- 模板 -->
-  <script type="text/html" id="userTpl">
+  <!-- 模板引擎 -->
+  <script type="text/html" id="firstTpl">
     {{each rows v i}}
     <tr>
-      <td>{{ (page-1)*size + i + 1 }}</td>
-      <td>{{ v.username }}</td>
-      <td>{{ v.mobile }}</td>
-      <td>{{ v.isDelete === 1 ? "正常" : "禁用"}}</td>
-      <td data-id="{{ v.id }}">
-        {{if v.isDelete === 1}}
-        <button class="btn btn-danger btn-sm">禁用</button> {{else if v.isDelete === 0}}
-        <button class="btn btn-success btn-sm">启用</button> {{/if}}
-      </td>
+      <td>{{ (page - 1) * size + i + 1 }}</td>
+      <td>{{ v.categoryName }}</td>
     </tr>
     {{/each}}
   </script>
@@ -153,7 +147,7 @@
   <script src="./lib/bootstrap-paginator/bootstrap-paginator.js"></script>
   <script src="./lib/nprogress/nprogress.js"></script>
   <script src="./js/common.js"></script>
-  <script src="./js/user.js"></script>
+  <script src="./js/first.js"></script>
 </body>
 
 </html>
