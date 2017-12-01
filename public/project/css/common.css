@@ -1,0 +1,18 @@
+/* 公共类样式 */
+.body_bg {
+  background-color: #222d32;
+}
+
+.mt_150 {
+  margin-top: 150px;
+}
+
+.mr_30 {
+  margin-right: 30px;
+}
+
+/* 登录界面 */
+.panel-heading h4 {
+  /* font-size: 18px; */
+  text-align: center;
+}
