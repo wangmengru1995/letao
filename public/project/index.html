@@ -23,7 +23,7 @@
     </div>
     <div class="nav">
       <ul>
-        <li><a href="#" class="now">
+        <li><a href="#">
             <span class="glyphicon glyphicon-user"></span>
             用户管理
           </a></li>
@@ -32,7 +32,7 @@
           <span class="glyphicon glyphicon-list"></span>
           分类管理
           </a>
-          <div class="child">
+          <div class="child" style="display: none;">
             <div class="first"><a href="#">一级分类</a></div>
             <div class="second"><a href="#">二级分类</a></div>
           </div>
@@ -46,12 +46,39 @@
   </div>
   <div class="lt-main">
     <div class="lt-header">
-      <a href="#"><span class="glyphicon glyphicon-align-justify pull-left"></span></a>
-      <a href="#"><span class="glyphicon glyphicon-log-out pull-right"></span></a>
+      <a href="javascript:;"><span class="glyphicon glyphicon-align-justify pull-left icons_menu"></span></a>
+      <a href="javascript:;"><span class="glyphicon glyphicon-log-out pull-right icons_logout"></span></a>
     </div>
     <div class="content"></div>
   </div>
 
+
+
+  <!-- 退出模态框 -->
+  <div class="modal fade" id="logoutModal">
+    <div class="modal-dialog modal-sm">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal"><span>&times;</span></button>
+          <h4 class="modal-title" id="gridSystemModalLabel">温馨提示</h4>
+        </div>
+        <div class="modal-body">
+          <div class="container-fluid">
+            <div class="row text-danger">              
+              <p>
+                  <span class="glyphicon glyphicon-info-sign"></span>
+                您确定要退出后台管理系统吗？
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+          <button type="button" class="btn btn-primary btn_logout">退出</button>
+        </div>
+      </div>
+    </div>
+  </div>
 
 
 
