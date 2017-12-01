@@ -37,7 +37,10 @@ $(function(){
     }
   })
 
-  $form.on("success.form.bv",function(){
+  $form.on("success.form.bv",function(e){
+
+    e.preventDefault();
+
     //表单校验成功，发送ajax
     $.ajax({
       type: "post",
@@ -60,9 +63,9 @@ $(function(){
     })
   })
 
-
-
-
-
+  //重置表单
+  $("[type='reset']").click(function(){
+    $form.data("bootstrapValidator").resetForm();
+  })
 
 })
