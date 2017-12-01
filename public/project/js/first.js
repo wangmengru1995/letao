@@ -65,6 +65,9 @@ $(function () {
         if(data.success){
           $("#firstModal").modal("hide");
           render();
+          //重置表单
+          $form.data("bootstrapValidator").resetForm();
+          $form[0].reset();
         }
       }
     })

@@ -140,3 +140,22 @@ html,body {
 .lt-content .btn_add {
   margin-bottom: 20px;
 }
+
+.table.table-bordered td {
+  vertical-align: middle;
+}
+
+.form-group .imgWrap {
+  position: relative;
+  width: 82px;
+  height: 34px;
+}
+
+.form-group input[type="file"] {
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
