@@ -1,0 +1,54 @@
+@charset "UTF-8";
+
+.lt-left {
+  width: 90px;
+  height: 100%;
+  float: left;
+  overflow: hidden;
+  /* 区域滚动需要这个定位 */
+  position: relative;
+}
+
+.lt-left li a {
+  display: block;
+  height: 50px;
+  line-height: 50px;
+  text-align: center;
+  width: 100%;
+  background-color: pink;
+  border-right: 1px solid red;
+  border-bottom: 1px solid red;
+}
+
+.lt-left li.now a {
+  background-color: #fff;
+  border: none;
+}
+
+.lt-right {
+  height: 100%;
+  overflow: hidden;
+  position: relative;
+}
+
+.lt-right li {
+  float: left;
+  text-align: center;
+  width: 33.3333%;
+  display: block;
+  text-align: center;
+}
+
+.lt-right li a img {
+  display: block;
+  width: 62px;
+  height: 62px;
+  margin: 0 auto;
+}
+
+.lt-right ul p {
+  margin-top: 20px;
+  margin-left: 10px;
+  font-size: 18px;
+  color: red;
+}
