@@ -46,7 +46,8 @@ $(function () {
 
   //搜索增加记录
   $(".btn-search").click(function(){
-    var value = $(".search_input").val();
+    var value = $(".search_input").val().trim();
+    
     if(value === ''){
       mui.toast("请输入要搜索的内容");
       return false;
@@ -55,6 +56,7 @@ $(function () {
     $(".search_input").val('');
 
     var arr = getHistory();
+    
 
     //判断搜索的内容数组中是否存在，存在就删除
     var index = arr.indexOf(value);
@@ -69,9 +71,11 @@ $(function () {
 
     //追加到数组的最前面
     arr.unshift(value);
+
     //重新设置缓存
     localStorage.setItem("history",JSON.stringify(arr));
     render();
+    location.href = "searchList.html?value="+value;
     
   })
 

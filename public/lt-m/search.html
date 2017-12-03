@@ -67,22 +67,23 @@
 
   <script type="text/html" id="tpl">
     {{if list.length == 0}}
-    <p>暂无搜索记录<p>
-    {{/if}} 
-
-    {{if list.length > 0}}
-    <div class="lt-title mui-clearfix">
-      <span class="mui-pull-left">搜索历史</span>
-      <span class="mui-pull-right fa fa-trash btn_empty">清空记录</span>
-    </div>
-    <div class="lt-content">
-      <ul>
-        {{each list v i}}
-        <li><a href="#">{{ v }} <span data-index="{{ i }}" class="mui-icon mui-icon-closeempty mui-pull-right btn-delete"></span></a></li>
-        {{/each}}
-      </ul>
-    </div>
-    {{/if}}
+    <p>暂无搜索记录
+      <p>
+        {{/if}} {{if list.length > 0}}
+        <div class="lt-title mui-clearfix">
+          <span class="mui-pull-left">搜索历史</span>
+          <span class="mui-pull-right fa fa-trash btn_empty">清空记录</span>
+        </div>
+        <div class="lt-content">
+          <ul>
+            {{each list v i}}
+            <li><a href="searchList.html?key={{ v }}">{{ v }}</a>
+              <span data-index="{{ i }}" class="mui-icon mui-icon-closeempty mui-pull-right btn-delete"></span>
+            </li>
+            {{/each}}
+          </ul>
+        </div>
+        {{/if}}
   </script>
 
   <script src="./lib/zepto/zepto.min.js"></script>

@@ -1,0 +1,55 @@
+@charset "UTF-8";
+
+
+.product-footer {
+  height: 55px;
+  width: 100%;
+  position: relative;
+  padding: 10px 10px 0 10px;
+  background-color: #eee;
+  border-top: 3px solid red;
+  font-size: 14px;
+}
+
+.product-footer a {
+  padding: 6px 0;
+  padding-left: 10px;
+}
+
+.lt-main {
+  /* padding: 0 10px; */
+  position: relative;
+  overflow: hidden;
+  height: 100%;
+  width: 100%;
+}
+
+.lt-main .title,.lt-main .productPrice,.lt-main .size,.lt-main .num,.lt-main .desc {
+  padding: 10px;
+  border-top: 1px solid #ccc;
+}
+
+.lt-main .price {
+  color: red;
+}
+.lt-main .oldPrice {
+  font-size: 14px;
+  color: #666;
+  text-decoration: line-through;
+}
+
+.lt-main .num .residue {
+  font-size: 12px;
+  color: #666;
+}
+
+.lt-main .size span {
+  border: 1px solid #ccc;
+  padding: 5px;
+  font-size: 12px;
+  line-height: 30px;
+}
+
+.lt-main .size span.now {
+  background-color: darkorange;
+}

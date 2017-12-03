@@ -1,0 +1,26 @@
+@charset "UTF-8";
+
+.lt-productNav {
+  margin: 10px 0;
+  height: 30px;
+  width: 100%;
+  background-color: #eee;
+  padding: 0 10px;
+}
+
+.lt-productNav li {
+  float: left;
+  width: 25%;
+  text-align: center;
+  line-height: 30px;
+  height: 30px;
+}
+
+.lt-productNav li a {
+  color: #666;
+  font-size: 12px;
+}
+
+.lt-productNav a.now {
+  color: darkorange;
+}
