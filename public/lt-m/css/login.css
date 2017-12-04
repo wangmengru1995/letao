@@ -1,0 +1,7 @@
+@charset "UTF-8";
+
+.lt-main .free_register a {
+  float: right;
+  font-size: 12px;
+  text-align: right;
+}

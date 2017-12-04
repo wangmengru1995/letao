@@ -1,0 +1,27 @@
+@charset "UTF-8";
+
+.container {
+  padding-bottom: 85px;
+}
+
+.lt-order {
+  height: 30px;
+  line-height: 30px;
+  width: 100%;
+  background-color: #eee;
+  font-size: 12px;
+  position: absolute;
+  left: 0;
+  bottom: 55px;
+  padding-left: 10px;
+}
+
+.lt-order span {
+  color: red;
+}
+.lt-order a {
+  height: 30px;
+  background-color: red;
+  padding: 0 15px;
+  color: #fff;
+}

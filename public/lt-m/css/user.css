@@ -1,0 +1,15 @@
+@charset "UTF-8";
+
+.lt-main .username {
+  color: #000;
+  font-size: 14px;
+}
+
+.logout_wrap {
+  padding: 0 10px;
+}
+
+.btn_logout {
+  margin-top: 10px;
+  width: 100%;
+}
