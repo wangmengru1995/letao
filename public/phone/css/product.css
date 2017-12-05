@@ -1,0 +1,14 @@
+@charset "UTF-8";
+
+.lt-foot {
+  height: 55px;
+  /* line-height: 55px; */
+  background-color: #eee;
+  font-size: 14px;
+  padding: 10px;
+  border-top: 3px solid red;
+}
+
+.lt-foot .go_cart {
+  margin-top: 5px;
+}

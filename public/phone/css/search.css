@@ -1,0 +1,30 @@
+@charset "UTF-8";
+
+.lt-main {
+  height: 100%;
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+.lt-main .history {
+  padding: 10px;
+  font-size: 12px;
+  color: #666;
+}
+
+.lt-main .history li {
+  height: 30px;
+  line-height: 30px;
+  padding: 0 10px;
+  border: 1px dashed red;
+  border-bottom: 0;
+}
+
+.lt-main .history li:last-child {
+  border-bottom: 1px dashed red;
+}
+
+.lt-main .history .content p {
+  margin-top: 10px;
+}

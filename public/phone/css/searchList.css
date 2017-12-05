@@ -1,16 +1,20 @@
 @charset "UTF-8";
 
-.lt-main .content {
-  padding: 10px;
+.lt-main .lt-nav {
+  height: 30px;
+  line-height: 30px;
+  background-color: #eee;
 }
 
-.lt-main .content li {
-  width: 33.3333%;
+.lt-main .lt-nav li {
   float: left;
+  width: 25%;
+  text-align: center;
+  font-size: 12px;
 }
 
-.lt-main .content a {
-  width: 100%;
+.lt-main .lt-nav li a {
+  color: #666;
 }
 
 .lt-main .product {
@@ -33,3 +37,4 @@
 .lt-main .product .item .oldPrice {
   text-decoration: line-through;
 }
+

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>乐淘移动端-搜索页</title>
+  <link rel="stylesheet" href="./lib/fa/css/font-awesome.css">
+  <link rel="stylesheet" href="./lib/mui/css/mui.css">
+  <link rel="stylesheet" href="./css/common.css">
+  <link rel="stylesheet" href="./css/search.css">
+  <link rel="icon" href="./favicon.ico">
+</head>
+
+<body>
+  <div class="container">
+    <!-- 头部区域 -->
+    <div class="lt-header">
+      <a href="index.html"><span class="mui-pull-left mui-icon mui-icon-arrowleft"></span></a>
+      <h3>乐淘分类</h3>
+    </div>
+    <!-- 主体区域 -->
+    <div class="lt-main">
+      <div class="mui-scroll-wrapper">
+        <div class="mui-scroll">
+          <div class="search">
+            <input type="text" placeholder="请输入搜索关键字">
+            <button class="mui-btn mui-btn-primary btn_search">搜索</button>
+          </div>
+          <div class="history">
+            <div class="title mui-clearfix">
+              <span class="mui-pull-left">搜索历史</span>
+              <span class="mui-pull-right fa fa-trash btn_empty">清空记录</span>
+            </div>
+            <div class="content">
+              <ul>
+                <!-- 挖个坑 -->
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 底部区域 -->
+    <div class="lt-footer">
+      <ul>
+        <li>
+          <a href="index.html"><span class="fa fa-home"></span><p>首页</p></a>
+        </li>
+        <li>
+          <a href="category.html"><span class="fa fa-bars"></span><p>分类</p></a>
+        </li>
+        <li>
+          <a href="cart.html"><span class="fa fa-shopping-cart"></span><p>购物车</p></a>
+        </li>
+        <li>
+          <a href="user.html"><span class="fa fa-user"></span><p>会员中心</p></a>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+
+  <!-- 搜索历史的模板 -->
+  <script type="text/html" id="tpl">
+    {{if list.length === 0}}
+    <p>暂无历史记录！</p>
+    {{/if}}
+    {{each list v i}}
+    <li><a href='searchList.html?value={{ v }}'>{{ v }}</a><span data-index="{{ i }}" class="mui-icon mui-icon-closeempty mui-pull-right btn_delete"></span></li>    
+    {{/each}}
+  </script>
+
+
+  <script src="./lib/zepto/zepto.min.js"></script>
+  <script src="./lib/mui/js/mui.js"></script>
+  <script src="./lib/artTemplate/template-web.js"></script>
+  <script src="./js/common.js"></script>
+  <script src="./js/search.js"></script>
+</body>
+
+</html>
