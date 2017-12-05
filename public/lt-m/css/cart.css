@@ -25,3 +25,63 @@
   padding: 0 15px;
   color: #fff;
 }
+
+.lt-main .item img {
+  width: 60px;
+  height: 60px;
+  float: left;
+}
+
+.lt-main .item {
+  padding: 10px;
+  border-bottom: 1px solid #ccc;
+  position: relative;
+}
+
+.lt-main .product_info {
+  overflow: hidden;
+  /* font-size: 12px;   */
+  padding: 0 10px;
+}
+
+.lt-main .product_info  p {
+  padding: 0;
+  margin: 0;
+}
+
+.lt-main .product_info .proName {
+  color: #111;
+  height: 40px;
+  margin-bottom: 10px;
+}
+.lt-main .product_info .price {
+  color: red;
+}
+.lt-main .product_info .oldPrice {
+  text-decoration: line-through;
+}
+
+.lt-main .item .ck {
+  position: absolute;
+  bottom: 15px;
+  left: 15px;
+}
+
+.product_size {
+  text-align: left;
+}
+
+.product_size span {
+  padding: 5px;
+  line-height: 30px;
+  border: 1px solid #ccc;
+  font-size: 12px;
+}
+
+.product_size span.now {
+  background-color: darkorange;
+}
+
+.product_num {
+  text-align: left;
+}
